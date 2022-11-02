@@ -1,0 +1,47 @@
+@startuml
+
+class Main
+class User
+class StartMenu
+class Movies
+class Series
+interface Media
+
+Main : + static void main()
+Main : + static void searchBar()
+Main : + static void categories()
+Main : + static void savedList()
+Main : + static void watchedList()
+
+User : + static void watchedList()
+User : + static void savedList()
+User : + static void pickMedia()
+User : + String userName;
+User : + String userLog;
+
+Media : + static void categories()
+
+Movies : + static void categories()
+Movies : + int releaseYear;
+Movies : + Star rating;
+Movies : + String Movies;
+
+Series : + static void categories()
+Series : + int seasons;
+Series : + int episodes:
+Series : + int releaseYear;
+Series : + Star rating;
+Series : + String Series;
+
+StartMenu : + static void createUser()
+StartMenu : + static void logInUser()
+StartMenu : + static void rememberUser()
+
+Main *-- StartMenu : has-a
+StartMenu *-- User : has-a
+StartMenu *-- Media : has-a
+User *-- Media : has-a
+Media <|-- Movies : is-a
+Media <|-- Series : is-a
+
+@enduml
