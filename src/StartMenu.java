@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public class StartMenu extends Main
 {
-static void createUser() {
+    protected static final Scanner scanner = new Scanner(System.in);
+
+    static void createUser() {
 
 }
 
-static void logInUser() {
     public static void clearTheConsole()
     {
         for (int i = 0; i < 100; i++)
@@ -14,7 +15,9 @@ static void logInUser() {
             System.out.println();
         }
     }
-    protected static final Scanner scanner = new Scanner(System.in);
+
+
+
     public static void startStreaming()
     {
         System.out.println("Welcome to Jems HUB");
@@ -22,15 +25,11 @@ static void logInUser() {
         scanner.nextLine();
         clearTheConsole();
 
-}
-
-static void savedUser() {
-
-}
 
         System.out.println("Do you want to sign in or login? ");
         System.out.println("Press 1 to login ");
         System.out.println("Press 2 to sign in ");
+        String name ="";
         while(true)
         {
             String answer = scanner.nextLine();
@@ -38,9 +37,12 @@ static void savedUser() {
             {
                 clearTheConsole();
                 System.out.println("Username: ");
+                name = scanner.nextLine();
                 System.out.println("Password: ");
-                get.userName();
-                get.userPass();
+                int password = scanner.nextInt();
+
+
+
             }
             if("2".equals(answer))
             {
@@ -48,7 +50,12 @@ static void savedUser() {
                 System.out.println("Create username with only letters: ");
                 System.out.println("Create password with only numbers: ");
             }
+            System.out.println("Welcome "+name);
         }
-        System.out.println("Welcome: " + get.userName());
+    }
+
+    public boolean checkUser(String name, int password)
+    {
+        return false;
     }
 }
