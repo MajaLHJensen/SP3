@@ -59,6 +59,7 @@ public class User extends StartMenu
         // type of media
         System.out.println("choose type of media: ");
 
+        //our options
         Scanner scan = new Scanner(System.in);
         System.out.println("1-Movies");
         System.out.println("2-Series");
@@ -67,10 +68,10 @@ public class User extends StartMenu
         System.out.println("5-Saved");
         int input = scan.nextInt();
 
+        //used options from user
         if(input == 1){
             System.out.println("You chose Movies");
         }
-
 
         else if(input == 2){
             System.out.println("You chose Series");
