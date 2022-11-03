@@ -23,6 +23,7 @@ public class Main
     public static void savedList()
     {
 
+        StartMenu.startStreaming();
     }
 
 
@@ -31,6 +32,8 @@ public class Main
     {
 
     }
+
+
 
 
 
@@ -44,6 +47,8 @@ public class Main
     {
         System.out.println();
     }
+
+
 //oprat alle film / serieer
 
 }
