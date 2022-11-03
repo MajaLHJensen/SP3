@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.Scanner;
 
 public class StartMenu extends Main
@@ -56,6 +57,23 @@ public class StartMenu extends Main
 
     public boolean checkUser(String name, int password)
     {
+        File file = new File("Userlogin.csv");
+
+        while (scanner.hasNextLine())
+        {
+            if(scanner.hasNextBoolean())
+            {
+                if(scanner.nextBoolean())
+                {
+                    System.out.println(scanner.nextLine());
+                }
+                else
+                {
+                    System.out.println(scanner.nextLine());
+                }
+            }
+            scanner.close();
+        }
         return false;
     }
 }
