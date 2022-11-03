@@ -8,7 +8,7 @@ public class Main
 
         ArrayList<Media>medias = new ArrayList<>();
         medias.add(new Movies());
-
+        Media movie1 = new Movies();
 
         User.pickMedia(medias);
     }
