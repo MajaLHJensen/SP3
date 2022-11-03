@@ -2,8 +2,10 @@ public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello world!");
+        StartMenu.startStreaming();
     }
+
+
 
     static void categories()
     {
@@ -14,4 +16,6 @@ public class Main
     {
         System.out.println();
     }
+
+
 }
