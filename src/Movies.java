@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
-public class Movies extends Media
-{
-    public String movies;
-    int releaseYear;
-    int starRating;
+public class Movies extends Media {
 
-    public Movies(ArrayList<String> category) {
-        super(category);
+    public Movies(String name, String year, ArrayList<String> category, double rating) {
+        super(name, year, category, rating);
     }
 
-    static void categories() {
+    @Override
+    public void categories() {
+
+    }
+
 }

@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Scanner;
 public class User extends StartMenu
 {
     public String userName;
@@ -56,14 +56,50 @@ public class User extends StartMenu
 
     public static void pickMedia(ArrayList<Media> medias){
 
-        //categories - movies - series
+        // type of media
+        System.out.println("choose type of media: ");
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("1-Movies");
+        System.out.println("2-Series");
+        System.out.println("3-Search");
+        System.out.println("4-Watched");
+        System.out.println("5-Saved");
+        int input = scan.nextInt();
+
+        if(input == 1){
+            System.out.println("You chose Movies");
+        }
+
+
+        else if(input == 2){
+            System.out.println("You chose Series");
+        }
+
+        else if(input == 3){
+            System.out.println("you chose searchbar");
+        }
+
+        else if(input == 4){
+            System.out.println("You chose Watched");
+        }
+
+        else if(input == 5){
+            System.out.println("You chose Saved");
+        }
+        else {
+            System.out.println("Option does not exists, try again");
+            pickMedia(medias);
+        }
+
+        /*categories - movies - series
         System.out.println("choose category: ");
 
         for(int i = 0; i < medias.size(); i++){
 
             medias.get(i);
 
-        }
+        }*/
 
 
 

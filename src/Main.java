@@ -6,11 +6,11 @@ public class Main
     {
         System.out.println("Hello world!");
 
-        ArrayList<Media>medias = new ArrayList<>();
+        /*ArrayList<Media>medias = new ArrayList<>();
         medias.add(new Movies());
         Media movie1 = new Movies();
-
-        User.pickMedia(medias);
+*/
+        User.pickMedia(null);
     }
 
 

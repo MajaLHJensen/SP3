@@ -2,18 +2,23 @@ import java.util.ArrayList;
 
 abstract public class Media
 {
-    ArrayList<String> category;
+    private ArrayList<String> category;
+    private String name;
+    private String year;
+    private double rating;
 
 
-    public Media(navn, årstal, ArrayList<String> category)
+    public Media(String name, String year, ArrayList<String> category, double rating)
     {
         this.category = category;
+        this.name = name;
+        this.year = year;
+        this.rating = rating;
+
     }
 
 
-public abstract void categories() {
-
-}
+    public abstract void categories();
 
 
 }
