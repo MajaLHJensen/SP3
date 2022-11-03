@@ -28,14 +28,14 @@ Movies : + String Movies;
 
 Series : + static void categories()
 Series : + int seasons;
-Series : + int episodes:
+Series : + int episodes;
 Series : + int releaseYear;
 Series : + Star rating;
 Series : + String Series;
 
 StartMenu : + static void createUser()
 StartMenu : + static void logInUser()
-StartMenu : + static void rememberUser()
+StartMenu : + static void savedUser()
 
 Main *-- StartMenu : has-a
 StartMenu *-- User : has-a
@@ -44,4 +44,6 @@ User *-- Media : has-a
 Media <|-- Movies : is-a
 Media <|-- Series : is-a
 
+!pragma layout smetana
 @enduml
+
