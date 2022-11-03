@@ -44,4 +44,6 @@ User *-- Media : has-a
 Media <|-- Movies : is-a
 Media <|-- Series : is-a
 
+!pragma layout smetana
 @enduml
+
