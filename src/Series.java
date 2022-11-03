@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Series extends Media
 {
     int releaseYear;
@@ -5,11 +7,15 @@ public class Series extends Media
     public int seasons;
     public int episode;
     public String Series;
+    //Todo: håndter epusode og season
+
+    public Series(String name, String year, ArrayList<String> category, double rating, int seasons, int episode) {
+        super(name, year, category, rating);
+    }
 
 
- static void categories() {
+    @Override
+    public void categories() {
 
- }
-
-
+    }
 }
