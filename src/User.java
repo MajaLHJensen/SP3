@@ -93,6 +93,7 @@ public class User extends StartMenu
             pickMedia(medias);
         }
 
+
         /*categories - movies - series
         System.out.println("choose category: ");
 
