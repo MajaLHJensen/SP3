@@ -1,10 +1,8 @@
+import java.util.ArrayList;
+
 public class User extends StartMenu
 {
     public String userLog;
-import java.util.ArrayList;
-
-public class User extends StartMenu {
-
     public String userName;
 
     public User()
