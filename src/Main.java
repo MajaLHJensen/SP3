@@ -4,12 +4,13 @@ public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello world!");
 
         /*ArrayList<Media>medias = new ArrayList<>();
         medias.add(new Movies());
         Media movie1 = new Movies();
 */
+        StartMenu.startStreaming();
+        StartMenu.checkUser("", 0);
         User.pickMedia(null);
     }
 
@@ -32,9 +33,6 @@ public class Main
     {
 
     }
-
-
-
 
 
 

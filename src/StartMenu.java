@@ -21,7 +21,7 @@ public class StartMenu extends Main
 
     public static void startStreaming()
     {
-        System.out.println("Welcome to Jems HUB");
+        System.out.println("Welcome to Jems play");
         System.out.println("Press ENTER to login");
         scanner.nextLine();
         clearTheConsole();
@@ -42,8 +42,6 @@ public class StartMenu extends Main
                 System.out.println("Password: ");
                 int password = scanner.nextInt();
 
-
-
             }
             if("2".equals(answer))
             {
@@ -53,25 +51,32 @@ public class StartMenu extends Main
             }
             System.out.println("Welcome "+name);
         }
+
     }
 
-    public boolean checkUser(String name, int password)
+    public static boolean checkUser(String name, int password)
     {
         File file = new File("Userlogin.csv");
 
+        //The loop will read the file line by line
         while (scanner.hasNextLine())
         {
+            //The loop will check if the file has a boolean value
             if(scanner.hasNextBoolean())
             {
+                //In the loop it will return the boolean if it exist.
                 if(scanner.nextBoolean())
                 {
+                    //Print the boolean value
                     System.out.println(scanner.nextLine());
                 }
                 else
                 {
+                    //Will continue running till the file ends
                     System.out.println(scanner.nextLine());
                 }
             }
+            //Closing the file
             scanner.close();
         }
         return false;
