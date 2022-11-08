@@ -21,7 +21,6 @@ public class StartMenu extends Main
 
     public static void startStreaming()
     {
-        System.out.println("Welcome to Jems Watch");
         System.out.println("Welcome to Jems play");
         System.out.println("Press ENTER to login");
         scanner.nextLine();

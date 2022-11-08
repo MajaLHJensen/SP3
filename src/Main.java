@@ -9,9 +9,15 @@ public class Main
         medias.add(new Movies());
         Media movie1 = new Movies();
 */
-        StartMenu.startStreaming();
-        StartMenu.checkUser("", 0);
-        User.pickMedia(null);
+        //StartMenu.startStreaming();
+        //StartMenu.checkUser("", 0);
+        //User.pickMedia(null);
+
+        FileIO fileIO = new FileIO();
+        ArrayList<Media> movies = fileIO.readMovieData();
+        for (Media movie : movies) {
+            System.out.println(movie);
+        }
     }
 
 

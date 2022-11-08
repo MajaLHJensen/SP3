@@ -11,5 +11,9 @@ public class Movies extends Media {
 
     }
 
-    // make an played movies list
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+// make an played movies list
 }
