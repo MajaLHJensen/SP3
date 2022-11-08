@@ -38,6 +38,9 @@ abstract public class Media
        // watchedList.add(playMedia());
         //TODO:^
     }
+    public static void playMedia() {
+
+    }
 
 
     // hvad vil du med det medie du har valgt; vil du save, play

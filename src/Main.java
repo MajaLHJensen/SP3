@@ -5,19 +5,26 @@ public class Main
     public static void main(String[] args)
     {
 
-        /*ArrayList<Media>medias = new ArrayList<>();
-        medias.add(new Movies());
-        Media movie1 = new Movies();
-*/
-        //StartMenu.startStreaming();
-        //StartMenu.checkUser("", 0);
-        //User.pickMedia(null);
+        ArrayList<Media>medias = new ArrayList<>();
+        //medias.add(new Movies());
+       // Media movie1 = new Movies();
+
+        StartMenu.startStreaming();
+        StartMenu.checkUser("", 0);
+        User.pickMedia(null);
 
         FileIO fileIO = new FileIO();
         ArrayList<Media> movies = fileIO.readMovieData();
         for (Media movie : movies) {
             System.out.println(movie);
         }
+
+//        FOR SERIES BUT DOES NOT WORK!!
+//        FileIO fileIO = new FileIO();
+//        ArrayList<Media> series = fileIO.readSeriesData();
+//        for (Media serie : series) {
+//            System.out.println(serie);
+//        }
     }
 
 

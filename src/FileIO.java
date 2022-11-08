@@ -5,78 +5,93 @@ import java.util.Scanner;
 
 public class FileIO {
 
+    // Arraylist of Media and choose Movie
     public ArrayList<Media> readMovieData() {
         ArrayList<Media> movies = new ArrayList<>();
 
+        // Load the Movie csv.file and go through the file.
         try {
-            Scanner scan = new Scanner(new File("SP3/data/movieData.csv"));
-
-            while(scan.hasNextLine())
-            {
+            Scanner scan = new Scanner(new File("data/movieData.csv"));
+            while (scan.hasNextLine()) {
                 String line = scan.nextLine();
                 System.out.println(line);
-                String[] lineData = line.split("; ");
+                String[] lineData = line.split(";");
 
-                String movieName = lineData[0];
-                String movieYear = lineData[1];
+                //  Movie title. Trim to remove space.
+                String movieName = lineData[0].trim();
+
+                // Movie year. Trim to remove space.
+                String movieYear = lineData[1].trim();
+
+                // Movie categories. Remove space and separate by comma.
                 ArrayList<String> categories = new ArrayList<>();
+                lineData[2].trim();
                 String[] categoryArray = lineData[2].split(", ");
-
-                for(int i = 0; i < categoryArray.length-1; i++)
-                {
+                for (int i = 0; i < categoryArray.length - 1; i++) {
                     categories.add(categoryArray[i]);
                 }
-
-                double rating = 0 //(lineData[3]);
-
-                //double rating = //((lineData[3]));
-                //toString().length()-1;
-
+                // Movie rating. Remove space, change the comma to a dot and change the string to a double.
+                String number = lineData[3].trim();
+                number = number.replace(',', '.');
+                double rating = Double.parseDouble(number);
 
                 Movies movie = new Movies(movieName, movieYear, categories, rating);
                 movies.add(movie);
             }
-
-
-
-            //header = scan.nextLine();
-            //String stringInput = readMovieData()[0];
-            //for (int i = 0; i < movies.length; i++) {
-             //   String s = scan.nextLine();
-              //  movies[i] = s;
-               // if (stringInput.contains(movies[1])) {
-               //     System.out.println(movies[0]);
-              //  }
-            //}
         } catch (FileNotFoundException e) {
-            System.out.println(e + "Try again");
+            System.out.println(e + "Option do not exist.Try again");
 
         }
         return movies;
+
     }
 
-//    public String[] readSeriesData() {
-//        String[] series = new String[0];
-//        String header;
+//   FOR SERIES BUT DOES NOT WORK!!
+//    public ArrayList<Media> readSeriesData(){
+//
+//        // Create an Arraylist of Media and choose Series
+//        ArrayList<Media> series = new ArrayList<>();
+//
+//        // Load the Series csv.file and go through the file.
 //        try {
 //            Scanner scan = new Scanner(new File("data/seriesData.csv"));
-//            header = scan.nextLine();
-//            String stringInput = readSeriesData()[0];
-//            for (int i = 0; i < series.length; i++) {
-//                String s = scan.nextLine();
-//                series[i] = s;
-//                if (stringInput.contains(series[1])) {
-//                    System.out.println(series[0]);
-//                }
-//            }catch(FileNotFoundException e;
-//            e){
-//                System.out.println(e + "Try again");
+//            while (scan.hasNextLine()) {
+//                String line = scan.nextLine();
+//                System.out.println(line);
+//                String[] lineData = line.split(";");
 //
+//                //  Series title. Trim to remove space.
+//                String seriesName = lineData[0].trim();
+//
+//                // ToDO:Series year. Trim to remove space. but something
+//                //String seriesYear = lineData[1].trim();
+//
+//                // Series categories. Remove space and separate by comma.
+//                ArrayList<String> categories = new ArrayList<>();
+//                lineData[2].trim();
+//                String[] categoryArray = lineData[2].split(", ");
+//                for (int i = 0; i < categoryArray.length - 1; i++) {
+//                    categories.add(categoryArray[i]);
+//                }
+//                // Series rating. Remove space, change the comma to a dot and change the string to a double.
+//                String number = lineData[3].trim();
+//                number = number.replace(',', '.');
+//                double rating = Double.parseDouble(number);
+//
+//                //ToDO: Add episodes and seasons
+//                Series serie = new Series(seriesName,year categories, rating);
+//                series.add(serie);
 //            }
-//            return series;
+//        } catch (FileNotFoundException e) {
+//            System.out.println(e + "Option do not exist.Try again");
 //        }
+//        return series;
+//
+//    }
+}
 
-    }
+
+
 
 
 
