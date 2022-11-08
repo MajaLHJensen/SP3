@@ -1,5 +1,15 @@
-public class Movies extends Media
-{
-    int releaseYear;
-    int starRating;
+import java.util.ArrayList;
+
+public class Movies extends Media {
+
+    public Movies(String name, String year, ArrayList<String> category, double rating) {
+        super(name, year, category, rating);
+    }
+
+    @Override
+    public void categories() {
+
+    }
+
+    // make an played movies list
 }
