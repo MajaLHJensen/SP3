@@ -54,26 +54,26 @@ public class User extends StartMenu
 
         //used options from user
         if(input == 1){
-            System.out.println("You chose Movies");
+            System.out.println("You choose movies, here's some options");
         }
 
         else if(input == 2){
-            System.out.println("You chose Series");
+            System.out.println("You choose series, here's some options");
         }
 
         else if(input == 3){
-            System.out.println("you chose searchbar");
+            System.out.println("you choose searchbar, search any movies or series");
         }
 
         else if(input == 4){
-            System.out.println("You chose Watched");
+            System.out.println("You choose your watched list: ");
         }
 
         else if(input == 5){
-            System.out.println("You chose Saved");
+            System.out.println("You choose your saved list: ");
         }
         else {
-            System.out.println("Option does not exists, try again");
+            System.out.println("Option does not exist, please pick the available options");
             pickMedia(medias);
         }
 

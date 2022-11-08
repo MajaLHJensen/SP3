@@ -27,6 +27,8 @@ abstract public class Media
     {
         ArrayList<Media> savedList = new ArrayList<Media>();
      //   savedList.add(saveMedia());
+      //  savedList.add(saveMedia());
+        //TODO:^
     }
 
 
@@ -35,6 +37,11 @@ abstract public class Media
     {
         ArrayList<Media> watchedList = new ArrayList<Media>();
       //  watchedList.add(playMedia());
+       // watchedList.add(playMedia());
+        //TODO:^
+    }
+    public static void playMedia() {
+
     }
 
 
@@ -43,4 +50,14 @@ abstract public class Media
 
     // når du har play, tilføj til watchdlist
 
+
+    @Override
+    public String toString() {
+        return "Media{" +
+                "category=" + category +
+                ", name='" + name + '\'' +
+                ", year='" + year + '\'' +
+                ", rating=" + rating +
+                '}';
+    }
 }

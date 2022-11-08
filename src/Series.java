@@ -9,7 +9,7 @@ public class Series extends Media
     public String Series;
     //Todo: håndter epusode og season
 
-    public Series(String name, String year, ArrayList<String> category, double rating, int seasons, int episode) {
+    public Series(String name, String year, ArrayList<String> category, double rating) {
         super(name, year, category, rating);
     }
 

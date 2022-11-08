@@ -39,6 +39,9 @@ public class StartMenu extends Main
                 name = scanner.nextLine();
                 System.out.println("Password: ");
                 int password = scanner.nextInt();
+
+
+
                 if (checkUser(name, password))
                 {
                     System.out.println("I HAVE ZE ACCESS!");
