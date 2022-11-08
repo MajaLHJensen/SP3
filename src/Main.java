@@ -9,9 +9,12 @@ public class Main
         medias.add(new Movies());
         Media movie1 = new Movies();
 */
-        StartMenu.startStreaming();
-        StartMenu.checkUser("", 0);
+
+        StartMenu startMenu = new StartMenu();
+        startMenu.startStreaming();
         User.pickMedia(null);
+
+
     }
 
 
@@ -21,18 +24,18 @@ public class Main
 
     // TODO: 03-11-2022 Lav constructor i Media, så Media kan returneres i metoden savedList
     //public static Media savedList()
-    public static void savedList()
-    {
-
-        StartMenu.startStreaming();
-    }
-
-
-    //public static Media watchedList()
-    public static void watchedList()
-    {
-
-    }
+//    public static void savedList()
+//    {
+//
+//        StartMenu.startStreaming();
+//    }
+//
+//
+//    //public static Media watchedList()
+//    public static void watchedList()
+//    {
+//
+//    }
 
 
 

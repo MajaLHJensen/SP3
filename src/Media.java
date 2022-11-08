@@ -26,7 +26,7 @@ abstract public class Media
     public static void savedList()
     {
         ArrayList<Media> savedList = new ArrayList<Media>();
-        savedList.add(saveMedia());
+     //   savedList.add(saveMedia());
     }
 
 
@@ -34,7 +34,7 @@ abstract public class Media
     public static void watchedList()
     {
         ArrayList<Media> watchedList = new ArrayList<Media>();
-        watchedList.add(playMedia());
+      //  watchedList.add(playMedia());
     }
 
 
