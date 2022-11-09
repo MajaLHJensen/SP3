@@ -46,6 +46,10 @@ public class StartMenu extends Main
                 {
                     System.out.println("I HAVE ZE ACCESS!");
                     System.out.println("Welcome " + name);
+                    System.out.println("please pres ENTER to continue");
+                    scanner.nextLine();
+                    clearTheConsole();
+                    break;
                 }
                 else
                 {
