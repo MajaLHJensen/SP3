@@ -11,7 +11,7 @@ public class FileIO {
 
         // Load the Movie csv.file and go through the file.
         try {
-            Scanner scan = new Scanner(new File("data/movieData.csv"));
+            Scanner scan = new Scanner(new File("SP3/data/movieData.csv"));
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
                 System.out.println(line);
