@@ -15,12 +15,18 @@ public class Main
         User.pickMedia(null);
 
 
-
         FileIO fileIO = new FileIO();
         ArrayList<Media> movies = fileIO.readMovieData();
         for (Media movie : movies) {
             System.out.println(movie);
         }
+
+        FileIO fileIO2 = new FileIO();
+        fileIO2.chooseMovie();
+
+       // FileIO fileIO3 = new FileIO();
+       // fileIO3.youHaveChosenMovie();
+
 
 //        FOR SERIES BUT DOES NOT WORK!!
 //        FileIO fileIO = new FileIO();

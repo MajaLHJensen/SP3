@@ -32,9 +32,6 @@ public class User extends StartMenu
     @Override
     public String toString() {
         return "You are now logged in as: " + userName;
-
-
-
     }
 
 
