@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StartMenu extends Main
-
 {
 
     protected final Scanner scanner = new Scanner(System.in);

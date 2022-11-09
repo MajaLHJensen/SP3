@@ -7,6 +7,10 @@ abstract public class Media
     private String year;
     private double rating;
 
+    public String getName()
+    {
+        return this.name;
+    }
 
     public Media(String name, String year, ArrayList<String> category, double rating)
     {

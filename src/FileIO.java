@@ -14,7 +14,7 @@ public class FileIO {
             Scanner scan = new Scanner(new File("SP3/data/movieData.csv"));
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
-                System.out.println(line);
+                //System.out.println(line);
                 String[] lineData = line.split(";");
 
                 //  Movie title. Trim to remove space.

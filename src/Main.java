@@ -12,19 +12,22 @@ public class Main
 
         StartMenu startMenu = new StartMenu();
         startMenu.startStreaming();
+
+        FileIO fileIO = new FileIO();
+        Collection.movies = fileIO.readMovieData();
+       // Collection.series = fileIO.readSeriesData();
         User.pickMedia(null);
 
 
+//        Collections.movies.sort();
 
-        FileIO fileIO = new FileIO();
-        ArrayList<Media> movies = fileIO.readMovieData();
-        for (Media movie : movies) {
-            System.out.println(movie);
-        }
+
+
+
 
 //        FOR SERIES BUT DOES NOT WORK!!
 //        FileIO fileIO = new FileIO();
-//        ArrayList<Media> series = fileIO.readSeriesData();
+//        ArrayList<Media> series =
 //        for (Media serie : series) {
 //            System.out.println(serie);
 //        }
