@@ -20,16 +20,12 @@ public class SearchBar extends FileIO
 
         for(Media m : Collection.movies)
         {
-            if (m.getName().contains(searchString)) // FIGURE OUT CASING!
+            searchString.equalsIgnoreCase(m.getName());
+            if ((m.getName().contains(searchString)));  // FIGURE OUT CASING!
             {
                 searchResults.add(m);
             }
         }
         return searchResults;
-
     }
-
 }
-
-
-

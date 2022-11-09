@@ -10,8 +10,8 @@ public class Main
         Media movie1 = new Movies();
 */
 
-        StartMenu startMenu = new StartMenu();
-        startMenu.startStreaming();
+        //StartMenu startMenu = new StartMenu();
+       // startMenu.startStreaming();
 
         FileIO fileIO = new FileIO();
         Collection.movies = fileIO.readMovieData();
