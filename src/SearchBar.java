@@ -10,22 +10,29 @@ public class SearchBar extends FileIO
         System.out.println("Enter the name of the movie, you wanna watch");
 
         String searchString = sc.nextLine();
+
         sc.close();
         return FetchSearchResults(searchString);
+
     }
     public ArrayList<Media> FetchSearchResults(String searchString)
     {
 
         ArrayList<Media> searchResults = new ArrayList<>();
+        boolean match = false;
 
         for(Media m : Collection.movies)
         {
-            searchString.equalsIgnoreCase(m.getName());
-            if ((m.getName().contains(searchString)));  // FIGURE OUT CASING!
+           if(m.getName().toLowerCase().contains(searchString.toLowerCase()))
+
+
+            // if (m.getName().contains(searchString));  // FIGURE OUT CASING!
             {
+                match = true;
                 searchResults.add(m);
             }
         }
         return searchResults;
     }
 }
+
