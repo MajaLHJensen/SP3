@@ -13,6 +13,9 @@ public class Main
         StartMenu startMenu = new StartMenu();
         startMenu.startStreaming();
 
+        User.pickMedia(null);
+
+
         FileIO fileIO = new FileIO();
         Collection.movies = fileIO.readMovieData();
        // Collection.series = fileIO.readSeriesData();
@@ -23,6 +26,13 @@ public class Main
 
 
 
+
+
+        FileIO fileIO2 = new FileIO();
+        fileIO2.chooseMovie();
+
+       // FileIO fileIO3 = new FileIO();
+       // fileIO3.youHaveChosenMovie();
 
 
 //        FOR SERIES BUT DOES NOT WORK!!

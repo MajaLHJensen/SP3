@@ -1,13 +1,20 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileIO {
+public class FileIO extends StartMenu {
+
+
+    protected final Scanner scanner = new Scanner(System.in);
+
+    ArrayList<Media> movies = new ArrayList<>();
 
     // Arraylist of Media and choose Movie
     public ArrayList<Media> readMovieData() {
-        ArrayList<Media> movies = new ArrayList<>();
+
 
         // Load the Movie csv.file and go through the file.
         try {
@@ -37,6 +44,7 @@ public class FileIO {
 
                 Movies movie = new Movies(movieName, movieYear, categories, rating);
                 movies.add(movie);
+
             }
         } catch (FileNotFoundException e) {
             System.out.println(e + "Option do not exist.Try again");
@@ -45,6 +53,67 @@ public class FileIO {
         return movies;
 
     }
+
+    public ArrayList<Media> chooseMovie()
+    {
+        Scanner c = new Scanner(System.in);
+        System.out.println("\n\n");
+        System.out.println("Press the number of which movie you want to chose");
+
+        int movieIWantToWatch = c.nextInt();
+        c.close();
+        return choseResults(movieIWantToWatch);
+
+    }
+
+    public ArrayList<Media> choseResults(int movieIWantToWatch)
+    {
+        ArrayList<Media> wannaWatch = new ArrayList<>();
+
+        for (Media m : Collection.movies)
+        {
+            if(m.getName().contains(movieIWantToWatch))
+            {
+                wannaWatch.add(m);
+            }
+        }
+        return wannaWatch;
+    }
+
+    /*
+    public void youHaveChosenMovie()
+    {
+        System.out.println("You have following choices: ");
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Press 1 if you want to watch the movie ");
+        System.out.println("Press 2 if you want to save the movie to your list");
+        int input = scan.nextInt();
+
+        if(input == 1)
+        {
+            System.out.println("The movie is now playing ");
+        }
+
+        else if(input == 2)
+        {
+        System.out.println("The movie has been added to your list ");
+        }
+
+        else
+        {
+        System.out.println("Option does not exist, please pick the available options");
+        }
+    }
+
+*/
+
+
+
+
+
+
+
 
 //   FOR SERIES BUT DOES NOT WORK!!
 //    public ArrayList<Media> readSeriesData(){

@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Movies extends Media {
 
+
     public Movies(String name, String year, ArrayList<String> category, double rating) {
         super(name, year, category, rating);
     }
@@ -15,6 +16,7 @@ public class Movies extends Media {
     public String toString() {
         return super.toString();
     }
+
 // make an played movies list
 
     //@Override
