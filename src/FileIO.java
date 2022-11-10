@@ -58,7 +58,7 @@ public class FileIO extends StartMenu {
     {
         Scanner c = new Scanner(System.in);
         System.out.println("\n\n");
-        System.out.println("Press the number of which movie you want to chose");
+        System.out.println("Please press the number of the movie you want to watch");
 
         int movieIWantToWatch = c.nextInt();
 
@@ -80,6 +80,7 @@ public class FileIO extends StartMenu {
     {
         System.out.println("\n\n");
         System.out.println("You have following choices: ");
+        System.out.println("You have following choices of movies: ");
 
         System.out.println("Press 1 if you want to watch the movie ");
         System.out.println("Press 2 if you want to save the movie to your list");
@@ -87,6 +88,7 @@ public class FileIO extends StartMenu {
         int input = scan1.nextInt();
         movieOption(input);
     }
+
 
     public void movieOption(int input)
     {

@@ -1,5 +1,6 @@
 @startuml
 
+
 class Main
 class User
 class StartMenu

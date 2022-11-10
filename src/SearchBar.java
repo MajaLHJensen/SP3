@@ -7,11 +7,11 @@ public class SearchBar extends FileIO
     public ArrayList<Media> Search()
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the name of the movie, you wanna watch");
+        System.out.println("Please enter the exact name of the movie, you wanna watch");
 
         String searchString = sc.nextLine();
 
-        sc.close();
+        //sc.close();
         return FetchSearchResults(searchString);
 
     }
@@ -24,15 +24,14 @@ public class SearchBar extends FileIO
         for(Media m : Collection.movies)
         {
            if(m.getName().toLowerCase().contains(searchString.toLowerCase()))
-
-
-            // if (m.getName().contains(searchString));  // FIGURE OUT CASING!
             {
                 match = true;
                 searchResults.add(m);
+
             }
         }
         return searchResults;
+
     }
 }
 

@@ -12,6 +12,7 @@ public class User extends StartMenu
         this.userPass = userPass;
 
     }
+
 // getting the username login
     public String getUserName() {
         return userName;
@@ -20,6 +21,7 @@ public class User extends StartMenu
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
 // getting the user password login
     public int getUserPass() {
         return userPass;
@@ -64,12 +66,25 @@ public class User extends StartMenu
         }
 
         else if(input == 3){
-            System.out.println("you choose searchbar, search any movies or series");
+            // System.out.println("you choose searchbar, search any movies or series");
             SearchBar searchBar = new SearchBar();
             ArrayList<Media> searchResults = searchBar.Search();
-            for(Media m : searchResults)
-            {
+            for (Media m : searchResults) {
                 System.out.println(m);
+            }
+
+            Scanner src = new Scanner(System.in);
+            System.out.println("Please enter the movies full name");
+            String nameOfMovie = src.nextLine();
+            for (Media md : searchResults) {
+
+                if (nameOfMovie.equals(md.getName()))
+                {
+                    System.out.println("Now playing " + nameOfMovie);
+                    break;
+                }else{
+                    System.out.println("Please enter the correct name of the movie");
+                }
             }
         }
 
@@ -84,20 +99,5 @@ public class User extends StartMenu
             System.out.println("Option does not exist, please pick the available options");
             pickMedia(medias);
         }
-
-
-        /*categories - movies - series
-        System.out.println("choose category: ");
-
-        for(int i = 0; i < medias.size(); i++){
-
-            medias.get(i);
-
-        }*/
-
-
-
-
-
     }
 }
