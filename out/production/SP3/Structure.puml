@@ -11,6 +11,7 @@ class FileIO
 class Collection
 class SearchBar
 enum MovieCategory
+class TextUI
 
 Main : + static void main()
 Main : + StartMenu startMenu;
@@ -65,11 +66,13 @@ Main *-- StartMenu : has-a
 StartMenu *-- User
 StartMenu *-- Media
 StartMenu *-- SearchBar
+StartMenu *-- FileIO
 User *-- Media
 Media <|-- Movies : is-a
 Media <|-- Series : is-a
-
+Media *-- FileIO
+Media *-- Collection
+Media *-- MovieCategory
 
 !pragma layout smetana
 @enduml
-
