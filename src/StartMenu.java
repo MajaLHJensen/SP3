@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class StartMenu extends Main
 {
-
     protected final Scanner scanner = new Scanner(System.in);
 
     ArrayList<User> users = new ArrayList<>();
+
     public void clearTheConsole()
     {
         for (int i = 0; i < 100; i++)
@@ -40,7 +40,6 @@ public class StartMenu extends Main
                 int password = scanner.nextInt();
 
 
-
                 if (checkUser(name, password))
                 {
                     System.out.println("I HAVE ZE ACCESS!");
@@ -49,8 +48,7 @@ public class StartMenu extends Main
                     scanner.nextLine();
                     clearTheConsole();
                     break;
-                }
-                else
+                } else
                 {
                     System.out.println("Incorrect username or password");
                 }
@@ -97,8 +95,7 @@ public class StartMenu extends Main
                 System.out.println("Username does exist");
             }
 
-        }
-        catch (FileNotFoundException e)
+        } catch (FileNotFoundException e)
         {
             System.out.println("UserLogin.csv does not exist");
             System.out.println("No users found, please register:");
@@ -109,15 +106,12 @@ public class StartMenu extends Main
 
             e.printStackTrace();
         }
-
         scanner.close();
         return false;
     }
 
     private void register(String userName, int userPassword)
     {
-
-
         // Filewriter: transfer new login to the file UserLogin.csv
         try
         {
@@ -126,7 +120,6 @@ public class StartMenu extends Main
             {
                 file.createNewFile();
             }
-
 
             FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -137,8 +130,7 @@ public class StartMenu extends Main
             User newUser = new User(userName, userPassword);
             users.add(newUser);
 
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             System.out.println(e);
         }

@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class User extends StartMenu
 {
+    ArrayList<Media> savedmedia = new ArrayList<>();
     public String userName;
     public int userPass;
-
 
     public User(String userName, int userPass) {
 
@@ -52,6 +52,11 @@ public class User extends StartMenu
         //used options from user
         if(input == 1){
             System.out.println("You choose movies, here's some options");
+            for(int i = 0; i < medias.size(); i++)
+            {
+                String movieS = i+" - "+medias.get(i).getName();
+                System.out.println(movieS);
+            }
         }
 
         else if(input == 2){

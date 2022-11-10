@@ -4,36 +4,28 @@ public class Main
 {
     public static void main(String[] args)
     {
-
         /*ArrayList<Media>medias = new ArrayList<>();
         medias.add(new Movies());
         Media movie1 = new Movies();
 */
-
         //StartMenu startMenu = new StartMenu();
-       // startMenu.startStreaming();
-
-        User.pickMedia(null);
-
+        // startMenu.startStreaming();
 
         FileIO fileIO = new FileIO();
         Collection.movies = fileIO.readMovieData();
-       // Collection.series = fileIO.readSeriesData();
-        User.pickMedia(null);
+        // Collection.series = fileIO.readSeriesData();
+        //User.pickMedia(null);
+
+        User.pickMedia(Collection.movies);
+        //Collections.movies.sort();
+
+        fileIO.chooseMovie();
+
+        fileIO.youHaveChosenMovie();
 
 
-//        Collections.movies.sort();
-
-
-
-
-
-        FileIO fileIO2 = new FileIO();
-        fileIO2.chooseMovie();
-
-       // FileIO fileIO3 = new FileIO();
-       // fileIO3.youHaveChosenMovie();
-
+        // FileIO fileIO3 = new FileIO();
+        // fileIO3.youHaveChosenMovie();
 
 //        FOR SERIES BUT DOES NOT WORK!!
 //        FileIO fileIO = new FileIO();
@@ -43,39 +35,24 @@ public class Main
 //        }
     }
 
-
-
-
-
-
-    // TODO: 03-11-2022 Lav constructor i Media, så Media kan returneres i metoden savedList
-    //public static Media savedList()
     public static void savedList()
     {
-
         //StartMenu.startStreaming();
     }
-
 
     //public static Media watchedList()
     public static void watchedList()
     {
-
     }
-
-
 
     static void categories()
     {
         System.out.println();
     }
 
-    static void  searchBar()
+    static void searchBar()
     {
         System.out.println();
     }
-
-
-//oprat alle film / serieer
 
 }
