@@ -1,27 +1,25 @@
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileIO extends StartMenu {
-
+public class FileIO extends StartMenu
+{
 
     protected final Scanner scanner = new Scanner(System.in);
-
     ArrayList<Media> movies = new ArrayList<>();
 
     // Arraylist of Media and choose Movie
-    public ArrayList<Media> readMovieData() {
-
+    public ArrayList<Media> readMovieData()
+    {
 
         // Load the Movie csv.file and go through the file.
-        try {
+        try
+        {
             Scanner scan = new Scanner(new File("data/movieData.csv"));
-            while (scan.hasNextLine()) {
+            while (scan.hasNextLine())
+            {
                 String line = scan.nextLine();
-                //System.out.println(line);
                 String[] lineData = line.split(";");
 
                 //  Movie title. Trim to remove space.
@@ -34,9 +32,11 @@ public class FileIO extends StartMenu {
                 ArrayList<String> categories = new ArrayList<>();
                 lineData[2].trim();
                 String[] categoryArray = lineData[2].split(", ");
-                for (int i = 0; i < categoryArray.length - 1; i++) {
+                for (int i = 0; i < categoryArray.length - 1; i++)
+                {
                     categories.add(categoryArray[i]);
                 }
+
                 // Movie rating. Remove space, change the comma to a dot and change the string to a double.
                 String number = lineData[3].trim();
                 number = number.replace(',', '.');
@@ -44,14 +44,12 @@ public class FileIO extends StartMenu {
 
                 Movies movie = new Movies(movieName, movieYear, categories, rating);
                 movies.add(movie);
-
             }
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e)
+        {
             System.out.println(e + "Option do not exist.Try again");
-
         }
         return movies;
-
     }
 
     public void chooseMovie()
@@ -59,35 +57,26 @@ public class FileIO extends StartMenu {
         Scanner c = new Scanner(System.in);
         System.out.println("\n\n");
         System.out.println("Please press the number of the movie you want to watch");
-
         int movieIWantToWatch = c.nextInt();
-
         System.out.println("you have chosen " + choseResults(movieIWantToWatch));
-
-
-
-       // return choseResults(movieIWantToWatch);
     }
 
     public String choseResults(int movieIWantToWatch)
     {
         ArrayList<Media> wannaWatch = Collection.movies;
         return wannaWatch.get(movieIWantToWatch).getName();
-
     }
 
     public void youHaveChosenMovie()
     {
         System.out.println("\n\n");
         System.out.println("You have following choices: ");
-
         System.out.println("Press 1 if you want to watch the movie ");
         System.out.println("Press 2 if you want to save the movie to your list");
         Scanner scan1 = new Scanner(System.in);
         int input = scan1.nextInt();
         movieOption(input);
     }
-
 
     public void movieOption(int input)
     {
@@ -98,13 +87,12 @@ public class FileIO extends StartMenu {
         {
             System.out.println("The movie has been added to your list ");
             //save movie to csv
-        }
-        else
+        } else
         {
             System.out.println("Option does not exist, please pick the available options");
         }
     }
-
+}
 
 
 //   FOR SERIES BUT DOES NOT WORK!!
@@ -148,7 +136,7 @@ public class FileIO extends StartMenu {
 //        }
 //        return series;
 //    }
-}
+
 
 
 

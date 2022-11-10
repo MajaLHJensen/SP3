@@ -2,21 +2,17 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class StartMenu extends Main
-{
+public class StartMenu extends Main{
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<User> users = new ArrayList<>();
 
-    public void clearTheConsole()
-    {
-        for (int i = 0; i < 100; i++)
-        {
+    public void clearTheConsole(){
+        for (int i = 0; i < 100; i++){
             System.out.println();
         }
     }
 
-    public void startStreaming()
-    {
+    public void startStreaming(){
         System.out.println("Welcome to J.E.M.S Play");
         System.out.println("Press ENTER to login");
         scanner.nextLine();
@@ -27,34 +23,28 @@ public class StartMenu extends Main
         System.out.println("Press 2 to create a new account ");
         String name = "";
 
-        while (true)
-        {
+        while (true){
             String answer = scanner.nextLine();
-            if ("1".equals(answer))
-            {
+            if ("1".equals(answer)){
                 clearTheConsole();
                 System.out.println("Username: ");
                 name = scanner.nextLine();
                 System.out.println("Password: ");
                 int password = scanner.nextInt();
 
-                if (checkUser(name, password))
-                {
+                if (checkUser(name, password)){
                     System.out.println("Great!You have officially logged in");
                     System.out.println("Welcome Back" + name);
                     System.out.println("please pres ENTER to continue");
                     scanner.nextLine();
                     clearTheConsole();
                     break;
-                }
-                else
-                {
+                }else{
                     System.out.println("Incorrect username or password");
                 }
             }
 
-            if ("2".equals(answer))
-            {
+            if ("2".equals(answer)){
                 clearTheConsole();
                 System.out.println("Create username with only letters: ");
                 String userName = scanner.nextLine();
@@ -73,15 +63,12 @@ public class StartMenu extends Main
         }
     }
 
-    public boolean checkUser(String name, int password)
-    {
-        try
-        {
+    public boolean checkUser(String name, int password){
+        try{
             File file = new File("data/UserLogin.csv");
             Scanner scanner = new Scanner(file);
 
-            while (scanner.hasNextLine())
-            {
+            while (scanner.hasNextLine()){
                 String line = scanner.nextLine();
                 String[] user = line.split(", ");
                 String userNameFromFile = user[0];
@@ -94,32 +81,26 @@ public class StartMenu extends Main
                 System.out.println("Username does exist");
             }
 
-        } catch (FileNotFoundException e)
-        {
+        }catch (FileNotFoundException e){
             System.out.println("UserLogin.csv does not exist");
             System.out.println("No users found, please register:");
             String userName = scanner.nextLine();
             int userPassword = scanner.nextInt();
             register(userName, userPassword);
-            // hvis ikke der allerede findes denm her fil. Hvorfor skal man så overhovedet kunne checkUser() ???
-
             e.printStackTrace();
         }
         scanner.close();
         return false;
     }
 
-    private void register(String userName, int userPassword)
-    {
-        // Filewriter: transfer new login to the file UserLogin.csv
-        try
-        {
+    private void register(String userName, int userPassword){
+
+        //Transfer new login to the file(UserLogin.csv) when the user signs up.
+        try{
             File file = new File("data/UserLogin.csv");
-            if (!file.exists())
-            {
+            if (!file.exists()){
                 file.createNewFile();
             }
-
             FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.newLine();
@@ -129,8 +110,7 @@ public class StartMenu extends Main
             User newUser = new User(userName, userPassword);
             users.add(newUser);
 
-        } catch (Exception e)
-        {
+        } catch (Exception e){
             System.out.println(e);
         }
     }
