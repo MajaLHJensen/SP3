@@ -17,13 +17,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/out/production/SP3/UserLogin.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>
