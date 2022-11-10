@@ -22,11 +22,6 @@ public class Main
         User.pickMedia(Collection.movies);
         //Collections.movies.sort();
 
-        fileIO.chooseMovie();
-
-        fileIO.youHaveChosenMovie();
-
-
         // FileIO fileIO3 = new FileIO();
         // fileIO3.youHaveChosenMovie();
 

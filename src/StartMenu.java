@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class StartMenu extends Main
 {
     protected final Scanner scanner = new Scanner(System.in);
-
     ArrayList<User> users = new ArrayList<>();
 
     public void clearTheConsole()
@@ -39,7 +38,6 @@ public class StartMenu extends Main
                 System.out.println("Password: ");
                 int password = scanner.nextInt();
 
-
                 if (checkUser(name, password))
                 {
                     System.out.println("Great!You have officially logged in");
@@ -48,7 +46,8 @@ public class StartMenu extends Main
                     scanner.nextLine();
                     clearTheConsole();
                     break;
-                } else
+                }
+                else
                 {
                     System.out.println("Incorrect username or password");
                 }
@@ -78,7 +77,7 @@ public class StartMenu extends Main
     {
         try
         {
-            File file = new File("SP3/data/UserLogin.csv");
+            File file = new File("data/UserLogin.csv");
             Scanner scanner = new Scanner(file);
 
             while (scanner.hasNextLine())
@@ -115,7 +114,7 @@ public class StartMenu extends Main
         // Filewriter: transfer new login to the file UserLogin.csv
         try
         {
-            File file = new File("SP3/data/UserLogin.csv");
+            File file = new File("data/UserLogin.csv");
             if (!file.exists())
             {
                 file.createNewFile();

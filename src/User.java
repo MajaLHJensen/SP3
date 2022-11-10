@@ -59,6 +59,9 @@ public class User extends StartMenu
                 String movieS = i+" - "+medias.get(i).getName();
                 System.out.println(movieS);
             }
+            FileIO fileIO = new FileIO();
+            fileIO.chooseMovie();
+            fileIO.youHaveChosenMovie();
         }
 
         else if(input == 2){
@@ -76,16 +79,7 @@ public class User extends StartMenu
             Scanner src = new Scanner(System.in);
             System.out.println("Please enter the movies full name");
             String nameOfMovie = src.nextLine();
-            for (Media md : searchResults) {
-
-                if (nameOfMovie.equals(md.getName()))
-                {
-                    System.out.println("Now playing " + nameOfMovie);
-                    break;
-                }else{
-                    System.out.println("Please enter the correct name of the movie");
-                }
-            }
+            System.out.println(checkMovieSearch(nameOfMovie, searchResults));
         }
 
         else if(input == 4){
@@ -99,5 +93,17 @@ public class User extends StartMenu
             System.out.println("Option does not exist, please pick the available options");
             pickMedia(medias);
         }
+    }
+
+    public static String checkMovieSearch(String nameOfMovie, ArrayList<Media> searchResults)
+    {
+        for (Media md : searchResults) {
+
+            if (nameOfMovie.equals(md.getName()))
+            {
+                return "Now playing " + nameOfMovie;
+            }
+        }
+        return "Please enter the correct name of the movie";
     }
 }

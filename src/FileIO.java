@@ -80,7 +80,6 @@ public class FileIO extends StartMenu {
     {
         System.out.println("\n\n");
         System.out.println("You have following choices: ");
-        System.out.println("You have following choices of movies: ");
 
         System.out.println("Press 1 if you want to watch the movie ");
         System.out.println("Press 2 if you want to save the movie to your list");
