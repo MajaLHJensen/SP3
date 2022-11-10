@@ -11,7 +11,7 @@ public class SearchBar extends FileIO
 
         String searchString = sc.nextLine();
 
-        sc.close();
+        //sc.close();
         return FetchSearchResults(searchString);
 
     }
@@ -24,15 +24,14 @@ public class SearchBar extends FileIO
         for(Media m : Collection.movies)
         {
            if(m.getName().toLowerCase().contains(searchString.toLowerCase()))
-
-
-            // if (m.getName().contains(searchString));  // FIGURE OUT CASING!
             {
                 match = true;
                 searchResults.add(m);
+
             }
         }
         return searchResults;
+
     }
 }
 
