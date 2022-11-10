@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SearchBar extends FileIO{
+public class SearchBar{
 
     public ArrayList<Media> Search(){
         Scanner sc = new Scanner(System.in);

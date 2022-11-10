@@ -3,22 +3,18 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileIO extends StartMenu
-{
+public class FileIO{
 
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<Media> movies = new ArrayList<>();
 
     // Arraylist of Media and choose Movie
-    public ArrayList<Media> readMovieData()
-    {
+    public ArrayList<Media> readMovieData(){
 
         // Load the Movie csv.file and go through the file.
-        try
-        {
+        try{
             Scanner scan = new Scanner(new File("data/movieData.csv"));
-            while (scan.hasNextLine())
-            {
+            while (scan.hasNextLine()){
                 String line = scan.nextLine();
                 String[] lineData = line.split(";");
 
@@ -32,8 +28,7 @@ public class FileIO extends StartMenu
                 ArrayList<String> categories = new ArrayList<>();
                 lineData[2].trim();
                 String[] categoryArray = lineData[2].split(", ");
-                for (int i = 0; i < categoryArray.length - 1; i++)
-                {
+                for (int i = 0; i < categoryArray.length - 1; i++){
                     categories.add(categoryArray[i]);
                 }
 

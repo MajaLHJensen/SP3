@@ -2,48 +2,73 @@
 
 
 class Main
-class User
 class StartMenu
+class User
+abstract Media
 class Movies
 class Series
-abstract Media
+class FileIO
+class Collection
+class SearchBar
+enum MovieCategory
 
 Main : + static void main()
-Main : + static void searchBar()
-Main : + static void categories()
-Main : + static void savedList()
-Main : + static void watchedList()
+Main : + StartMenu startMenu;
+Main : + FileIO fileIO;
 
-User : + static void watchedList()
-User : + static void savedList()
-User : + static void pickMedia()
+StartMenu : # Scanner scanner;
+StartMenu : ArrayList<User> user;
+StartMenu : + void clearTheConsole()
+StartMenu : + void startStreaming()
+StartMenu : + boolean checkUser()
+StartMenu : - void register()
+
 User : + String userName;
-User : + String userLog;
+User : + int userPass;
+User : + User()
+User : + String getUserName()
+User : + void setUserName()
+User : + int getUserPass()
+User : + void setUserPass()
+User : + String toString()
+User : + static void pickMedia()
+User : + static String checkMovieSearch()
 
-Media : + static void categories()
+Media : - ArrayList<String> category;
+Media : - String name;
+Media : - String year;
+Media : - double rating;
+Media : + String getName()
+Media : + Media()
+Media : + String toString()
 
-Movies : + static void categories()
-Movies : + int releaseYear;
-Movies : + Star rating;
-Movies : + String Movies;
+Movies : + Movies()
+Movies : + String toString()
 
-Series : + static void categories()
-Series : + int seasons;
-Series : + int episodes;
-Series : + int releaseYear;
-Series : + Star rating;
-Series : + String Series;
+Series : + Series()
 
-StartMenu : + static void createUser()
-StartMenu : + static void logInUser()
-StartMenu : + static void savedUser()
+FileIO : # final Scanner scanner;
+FileIO : ArrayList<Media> movies;
+FileIO : + ArrayList<Media> readMovieData()
+FileIO : + void chooseMovie()
+FileIO : + String choseResults()
+FileIO : + void youHaveChosenMovie()
+FileIO : + void movieOption()
+
+Collection : + static ArrayList<Media> movies;
+Collection : + static ArrayList<Media> series;
+
+SearchBar : + ArrayList<Media> Search()
+SearchBar : + ArrayList<Media> FetchSearchResults()
 
 Main *-- StartMenu : has-a
-StartMenu *-- User : has-a
-StartMenu *-- Media : has-a
-User *-- Media : has-a
+StartMenu *-- User
+StartMenu *-- Media
+StartMenu *-- SearchBar
+User *-- Media
 Media <|-- Movies : is-a
 Media <|-- Series : is-a
+
 
 !pragma layout smetana
 @enduml

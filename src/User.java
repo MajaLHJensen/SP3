@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-public class User extends StartMenu{
+public class User{
 
     public String userName;
     public int userPass;
