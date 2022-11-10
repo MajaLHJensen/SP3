@@ -18,14 +18,14 @@ public class StartMenu extends Main
 
     public void startStreaming()
     {
-        System.out.println("Welcome to Jems play");
+        System.out.println("Welcome to J.E.M.S Play");
         System.out.println("Press ENTER to login");
         scanner.nextLine();
         clearTheConsole();
 
-        System.out.println("Do you want to sign in or login? ");
+        System.out.println("Do you want to create a new account or login into an existing account? ");
         System.out.println("Press 1 to login ");
-        System.out.println("Press 2 to sign in ");
+        System.out.println("Press 2 to create a new account ");
         String name = "";
 
         while (true)
@@ -43,8 +43,8 @@ public class StartMenu extends Main
 
                 if (checkUser(name, password))
                 {
-                    System.out.println("I HAVE ZE ACCESS!");
-                    System.out.println("Welcome " + name);
+                    System.out.println("Great!You have officially logged in");
+                    System.out.println("Welcome Back" + name);
                     System.out.println("please pres ENTER to continue");
                     scanner.nextLine();
                     clearTheConsole();

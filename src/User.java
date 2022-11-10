@@ -59,7 +59,6 @@ public class User extends StartMenu
         }
 
         else if(input == 3){
-            System.out.println("you choose searchbar, search any movies or series");
             SearchBar searchBar = new SearchBar();
             ArrayList<Media> searchResults = searchBar.Search();
             for(Media m : searchResults)

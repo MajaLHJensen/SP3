@@ -7,7 +7,7 @@ public class SearchBar extends FileIO
     public ArrayList<Media> Search()
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the name of the movie, you wanna watch");
+        System.out.println("Please enter the exact name of the movie, you wanna watch");
 
         String searchString = sc.nextLine();
 
