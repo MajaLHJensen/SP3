@@ -1,49 +1,19 @@
-import java.util.ArrayList;
+public class Main{
+    public static void main(String[] args){
 
-public class Main
-{
-    public static void main(String[] args)
-    {
-        System.out.println("Hello world!");
+        StartMenu startMenu = new StartMenu();
+        startMenu.startStreaming();
 
-        ArrayList<Media>medias = new ArrayList<>();
-        medias.add(new Movies());
-
-
-        User.pickMedia(medias);
+        FileIO fileIO = new FileIO();
+        Collection.movies = fileIO.readMovieData();
+        User.pickMedia(Collection.movies);
     }
-
-
-
-
-
-
-    // TODO: 03-11-2022 Lav constructor i Media, så Media kan returneres i metoden savedList
-    //public static Media savedList()
-    public static void savedList()
-    {
-
-    }
-
-
-    //public static Media watchedList()
-    public static void watchedList()
-    {
-
-    }
-
-
-
-
-    static void categories()
-    {
-        System.out.println();
-    }
-
-    static void  searchBar()
-    {
-        System.out.println();
-    }
-//oprat alle film / serieer
-
 }
+
+//        FOR SERIES BUT DOES NOT WORK!!
+//        Collection.series = fileIO.readSeriesData();
+//        FileIO fileIO = new FileIO();
+//        ArrayList<Media> series =
+//        for (Media serie : series) {
+//        System.out.println(serie);
+//        }
