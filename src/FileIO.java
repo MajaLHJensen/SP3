@@ -1,5 +1,7 @@
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,6 +9,7 @@ public class FileIO{
 
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<Media> movies = new ArrayList<>();
+
 
     // Arraylist of Media and choose Movie
     public ArrayList<Media> readMovieData(){
@@ -87,6 +90,8 @@ public class FileIO{
             System.out.println("Option does not exist, please pick the available options");
         }
     }
+
+
 }
 
 
