@@ -1,4 +1,7 @@
 public class Main{
+
+    static int count = 0;
+
     public static void main(String[] args){
 
         StartMenu startMenu = new StartMenu();
@@ -8,7 +11,23 @@ public class Main{
         Collection.movies = fileIO.readMovieData();
         User.pickMedia(Collection.movies);
     }
+
+
+    // The method that calls the main() method, is used to restart in method startStreaming()
+    static void mainCaller()
+    {
+        count++;
+
+        // Calling the main() only 3 times
+        if (count < 3) {
+
+            // Calling the main() method
+            main(null);
+        }
+    }
+
 }
+
 
 //        FOR SERIES BUT DOES NOT WORK!!
 //        Collection.series = fileIO.readSeriesData();

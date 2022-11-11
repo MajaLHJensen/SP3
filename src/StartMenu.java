@@ -34,11 +34,9 @@ public class StartMenu extends Main{
                 int password = scanner.nextInt();
 
                 if (checkUser(name, password)){
-                    System.out.println("Great!You have officially logged in");
-                    System.out.println("Welcome Back" + name);
-                    System.out.println("please pres ENTER to continue");
-                    scanner.nextLine();
-                    clearTheConsole();
+                    System.out.println("Great! You have officially logged in");
+                    System.out.println("Welcome Back " + name);
+                    System.out.println("");
                     break;
                 }else{
                     System.out.println("Incorrect username or password");
@@ -62,14 +60,12 @@ public class StartMenu extends Main{
                     scanner.nextLine();
                     clearTheConsole();
                     break;
-                }
-                else
-                {
+                } else{
                     System.out.println("");
                     System.out.println("Username does already exist, please login or change username");
                     System.out.println(" ");
                     scanner.nextLine();
-                    startStreaming();
+                    Main.mainCaller();
                 }
             }
         }
