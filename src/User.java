@@ -86,7 +86,7 @@ public class User{
 
     public static String checkMovieSearch(String nameOfMovie, ArrayList<Media> searchResults){
         for (Media md : searchResults){
-            if (nameOfMovie.equals(md.getName())){
+            if (nameOfMovie.equalsIgnoreCase(md.getName())){
                 return "Now playing " + nameOfMovie;
             }
         }
