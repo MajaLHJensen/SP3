@@ -1,15 +1,13 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileIO{
 
+    private Media media;
+
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<Media> movies = new ArrayList<>();
-
 
     // Arraylist of Media and choose Movie
     public ArrayList<Media> readMovieData(){
@@ -50,19 +48,21 @@ public class FileIO{
         return movies;
     }
 
-    public void chooseMovie()
+    public int chooseMovie()
     {
         Scanner c = new Scanner(System.in);
         System.out.println("\n\n");
         System.out.println("Please press the number of the movie you want to watch");
         int movieIWantToWatch = c.nextInt();
-        System.out.println("you have chosen " + choseResults(movieIWantToWatch));
+        media = choseResults(movieIWantToWatch);
+        System.out.println("you have chosen " + media.getName());
+        return movieIWantToWatch;
     }
 
-    public String choseResults(int movieIWantToWatch)
+    public Media choseResults(int movieIWantToWatch)
     {
         ArrayList<Media> wannaWatch = Collection.movies;
-        return wannaWatch.get(movieIWantToWatch).getName();
+        return wannaWatch.get(movieIWantToWatch);
     }
 
     public void youHaveChosenMovie()
@@ -84,16 +84,30 @@ public class FileIO{
         } else if (input == 2)
         {
             System.out.println("The movie has been added to your list ");
+            UsersSavedMovies(media.getName());
             //save movie to csv
         } else
         {
             System.out.println("Option does not exist, please pick the available options");
         }
     }
+    public void UsersSavedMovies(String movie)
+    {
+        try{
+            File file = new File("data/UserLogin.csv");
+            if(!file.exists()){
+                file.createNewFile();
+            }
 
+            FileWriter fw = new FileWriter(file, true);
+            fw.write(movie);
+            fw.close();
 
+        }catch(IOException e){
+            System.out.println("not work"+ e.getMessage());
+        }
+    }
 }
-
 
 //   FOR SERIES BUT DOES NOT WORK!!
 //    public ArrayList<Media> readSeriesData(){
