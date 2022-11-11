@@ -67,12 +67,12 @@ StartMenu *-- User
 StartMenu *-- Media
 StartMenu *-- SearchBar
 StartMenu *-- FileIO
-User *-- Media
 Media <|-- Movies : is-a
 Media <|-- Series : is-a
 Media *-- FileIO
 Media *-- Collection
 Media *-- MovieCategory
+User *-- Media
 
 !pragma layout smetana
 @enduml
