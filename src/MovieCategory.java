@@ -1,5 +1,6 @@
 //Rename the class when we make series to MediaCategory
 public enum MovieCategory {
+
     CRIME,
     DRAMA,
     ADVENTURE,

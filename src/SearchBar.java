@@ -13,17 +13,12 @@ public class SearchBar{
 
 
     public ArrayList<Media> FetchSearchResults(String searchString){
-
         ArrayList<Media> searchResults = new ArrayList<>();
-
-
         for(Media m : Collection.movies){
            if(m.getName().toLowerCase().contains(searchString.toLowerCase()))
             {
-
                 searchResults.add(m);
             }
-
         }
         return searchResults;
     }
