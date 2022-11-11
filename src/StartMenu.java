@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class StartMenu extends Main{
     protected final Scanner scanner = new Scanner(System.in);
-   public ArrayList<User> users = new ArrayList<>();
+    ArrayList<User> users = new ArrayList<>();
 
     public void clearTheConsole(){
         for (int i = 0; i < 100; i++){
