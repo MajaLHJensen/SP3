@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class FileIO{
 
-    private Media media;
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<User> users = new ArrayList<>();
     ArrayList<Media> movies = new ArrayList<>();
@@ -109,7 +108,6 @@ public class FileIO{
 
         }catch (FileNotFoundException e){
             System.out.println("UserLogin.csv does not exist");
-            userName = scanner.nextLine();
             e.printStackTrace();
         }
         return true;
