@@ -9,6 +9,7 @@ public class FileIO{
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<Media> movies = new ArrayList<>();
 
+
     // Arraylist of Media and choose Movie
     public ArrayList<Media> readMovieData(){
 

@@ -5,10 +5,13 @@ public class User{
     public String userName;
     public int userPass;
 
+    public Media movie;
+
     public User(String userName, int userPass){
         this.userName = userName;
         this.userPass = userPass;
     }
+
 
     public String getUserName(){
         return userName;
