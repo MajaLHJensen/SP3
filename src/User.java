@@ -1,6 +1,3 @@
-import javax.xml.soap.Text;
-import java.util.ArrayList;
-import java.util.Scanner;
 public class User extends FileIO {
 
     public String userName;
