@@ -1,9 +1,7 @@
 import java.util.ArrayList;
 
-public class Collection
-{
-    public static ArrayList<Media> movies;
+public class Collection {
 
-    //For series. Not done!
-    //public static ArrayList<Media> series;
+    // Creates an Array of Media and specifically movies.
+    public static ArrayList<Media> movies;
 }

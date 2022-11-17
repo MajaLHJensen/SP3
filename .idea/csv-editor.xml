@@ -10,21 +10,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/data/movieData.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/data/seriesData.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\data\UserLogin.csv">
+        <entry key="/data/UserSaveMovie.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
