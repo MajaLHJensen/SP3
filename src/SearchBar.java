@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-// searchbar for movies only. måske opdøb?
 public class SearchBar{
 
     public ArrayList<Media> Search(){
@@ -16,12 +15,9 @@ public class SearchBar{
     public ArrayList<Media> FetchSearchResults(String searchString){
 
         ArrayList<Media> searchResults = new ArrayList<>();
-        boolean match = false;
-
         for(Media m : Collection.movies){
            if(m.getName().toLowerCase().contains(searchString.toLowerCase()))
             {
-                match = true;
                 searchResults.add(m);
             }
         }
