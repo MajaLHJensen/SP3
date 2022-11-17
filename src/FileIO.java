@@ -12,38 +12,30 @@ public class FileIO{
 
     // Arraylist of Media and choose Movie
     public ArrayList<Media> readMovieData(){
-
-        // Load the Movie csv.file and go through the file.
         try{
+            //Imports the CSV file(movieData) and creates a scanner to go through it.
             Scanner scan = new Scanner(new File("data/movieData.csv"));
             while (scan.hasNextLine()){
                 String line = scan.nextLine();
                 String[] lineData = line.split(";");
 
-                //  Movie title. Trim to remove space.
                 String movieName = lineData[0].trim();
-
-                // Movie year. Trim to remove space.
                 String movieYear = lineData[1].trim();
-
-                // Movie categories. Remove space and separate by comma.
-                ArrayList<String> categories = new ArrayList<>();
-                lineData[2].trim();
+                // This method splits the String "categories" by its comma separation and goes through the array.
+                ArrayList<String> MovieCategory = new ArrayList<>();
                 String[] categoryArray = lineData[2].split(", ");
                 for (int i = 0; i < categoryArray.length - 1; i++){
-                    categories.add(categoryArray[i]);
+                    MovieCategory.add(categoryArray[i]);
                 }
-
-                // Movie rating. Remove space, change the comma to a dot and change the string to a double.
+                // This method takes the String "rating" replaces the comma with a dot and changes it to a Double.
                 String number = lineData[3].trim();
                 number = number.replace(',', '.');
-                double rating = Double.parseDouble(number);
+                double movieRating = Double.parseDouble(number);
 
-                Movies movie = new Movies(movieName, movieYear, categories, rating);
+                Movies movie = new Movies(movieName, movieYear, MovieCategory, movieRating);
                 movies.add(movie);
             }
-        } catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             System.out.println(e + "Option do not exist.Try again");
         }
         return movies;

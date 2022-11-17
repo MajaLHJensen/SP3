@@ -52,9 +52,6 @@ public class User{
                 String movieS = i+" - "+medias.get(i).getName();
                 System.out.println(movieS);
             }
-            Options options = new Options();
-            options.chooseMovie();
-            options.youHaveChosenMovie();
         }
 
         else if(input == 2){

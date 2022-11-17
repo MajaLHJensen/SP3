@@ -119,11 +119,10 @@ public class StartMenu extends Main{
 
     private void register(String userName, int userPassword){
 
-        //Transfer new login to the file(UserLogin.csv) when the user signs up.
         try{
             File file = new File("data/UserLogin.csv");
             if (!file.exists()){
-                file.createNewFile();
+                //file.createNewFile();
             }
             FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw);
