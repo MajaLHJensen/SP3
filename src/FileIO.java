@@ -42,48 +42,6 @@ public class FileIO{
     }
 }
 
-//   FOR SERIES BUT DOES NOT WORK!!
-//    public ArrayList<Media> readSeriesData(){
-//
-//        // Create an Arraylist of Media and choose Series
-//        ArrayList<Media> series = new ArrayList<>();
-//
-//        // Load the Series csv.file and go through the file.
-//        try {
-//            Scanner scan = new Scanner(new File("data/seriesData.csv"));
-//            while (scan.hasNextLine()) {
-//                String line = scan.nextLine();
-//                System.out.println(line);
-//                String[] lineData = line.split(";");
-//
-//                //  Series title. Trim to remove space.
-//                String seriesName = lineData[0].trim();
-//
-//                // ToDO:Series year. Trim to remove space. but something
-//                //String seriesYear = lineData[1].trim();
-//
-//                // Series categories. Remove space and separate by comma.
-//                ArrayList<String> categories = new ArrayList<>();
-//                lineData[2].trim();
-//                String[] categoryArray = lineData[2].split(", ");
-//                for (int i = 0; i < categoryArray.length - 1; i++) {
-//                    categories.add(categoryArray[i]);
-//                }
-//                // Series rating. Remove space, change the comma to a dot and change the string to a double.
-//                String number = lineData[3].trim();
-//                number = number.replace(',', '.');
-//                double rating = Double.parseDouble(number);
-//
-//                //ToDO: Add episodes and seasons
-//                Series serie = new Series(seriesName,year categories, rating);
-//                series.add(serie);
-//            }
-//        } catch (FileNotFoundException e) {
-//            System.out.println(e + "Option do not exist.Try again");
-//        }
-//        return series;
-//    }
-
 
 
 

@@ -12,23 +12,6 @@ public class User{
         this.userPass = userPass;
     }
 
-
-    public String getUserName(){
-        return userName;
-    }
-
-    public void setUserName(String userName){
-        this.userName = userName;
-    }
-
-    public int getUserPass(){
-        return userPass;
-    }
-
-    public void setUserPass(int userPass){
-        this.userPass = userPass;
-    }
-
     @Override
     public String toString(){
         return "You are now logged in as: " + userName;

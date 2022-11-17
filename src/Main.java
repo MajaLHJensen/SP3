@@ -4,7 +4,7 @@ public class Main{
 
     public static void main(String[] args){
 
-        
+
         // Here we call the method to welcome the user and log in.
         StartMenu startMenu = new StartMenu();
         startMenu.startStreaming();
@@ -20,15 +20,12 @@ public class Main{
         options.youHaveChosenMovie();
     }
 
-
     // The method that calls the main() method, is used to restart in method startStreaming()
     static void mainCaller()
     {
         count++;
-
         // Calling the main() only 3 times
         if (count < 3) {
-
             // Calling the main() method
             main(null);
         }

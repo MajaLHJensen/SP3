@@ -152,7 +152,7 @@ public class StartMenu extends Main{
                 String userNameFromFile = user[0];
 
                 if (userName.equals(userNameFromFile))
-                        return false;
+                    return false;
             }
 
         }catch (FileNotFoundException e){
