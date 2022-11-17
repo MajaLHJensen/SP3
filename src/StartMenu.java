@@ -13,7 +13,7 @@ public class StartMenu extends Main{
     }
 
     public void startStreaming(){
-        System.out.println("Welcome to J.E.M.S Play");
+        System.out.println("Hello and welcome to J.E.M.S - Play");
         System.out.println("Press ENTER to login");
         scanner.nextLine();
         clearTheConsole();
@@ -33,7 +33,7 @@ public class StartMenu extends Main{
                 int password = scanner.nextInt();
 
                 if (checkUser(name, password)){
-                    System.out.println("Great!You have officially logged in");
+                    System.out.println("Great!You have officially logged in as ");
                     System.out.println("Welcome Back" + name);
                     System.out.println("please pres ENTER to continue");
                     scanner.nextLine();
@@ -54,8 +54,8 @@ public class StartMenu extends Main{
                 register(userName, userPassword);
                 scanner.nextLine();
                 clearTheConsole();
-                System.out.println("Welcome " + userName);
-                System.out.println("please pres ENTER to continue");
+                System.out.println("Welcome to J.E.M.S- Play " + userName);
+                System.out.println("Please press ENTER to continue to see your options");
                 scanner.nextLine();
                 clearTheConsole();
                 break;

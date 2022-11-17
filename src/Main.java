@@ -1,12 +1,17 @@
 public class Main{
     public static void main(String[] args){
 
-        StartMenu startMenu = new StartMenu();
-        startMenu.startStreaming();
+       // StartMenu startMenu = new StartMenu();
+       // startMenu.startStreaming();
+
 
         FileIO fileIO = new FileIO();
         Collection.movies = fileIO.readMovieData();
         User.pickMedia(Collection.movies);
+
+        Options options = new Options();
+        options.chooseMovie();
+        options.youHaveChosenMovie();
     }
 }
 
