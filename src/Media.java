@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 abstract public class Media{
-    private ArrayList<String> category;
-    private String name;
-    private String year;
-    private double rating;
+    private  final ArrayList<String> category;
+    private final String name;
+    private final String year;
+    private final double rating;
 
     public String getName(){
         return this.name;
