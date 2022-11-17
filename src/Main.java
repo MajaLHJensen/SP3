@@ -1,3 +1,5 @@
+import javax.xml.soap.Text;
+
 public class Main{
 
     static int count = 0;
@@ -6,13 +8,14 @@ public class Main{
 
 
         // Here we call the method to welcome the user and log in.
-        StartMenu startMenu = new StartMenu();
-        startMenu.startStreaming();
+        TextUI textUI = new TextUI();
+        textUI.startStreaming();
 
         //Here we call the method to read the movie data so the user can pick the specific media they want.
         FileIO fileIO = new FileIO();
         Collection.movies = fileIO.readMovieData();
-        User.pickMedia(Collection.movies);
+        TextUI text = new TextUI();
+        text.pickMedia(Collection.movies);
 
         // Here we call the methods for the user to chose what to do with the chosen media
         Options options = new Options();
