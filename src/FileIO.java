@@ -9,6 +9,7 @@ public class FileIO{
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<Media> movies = new ArrayList<>();
 
+
     // Arraylist of Media and choose Movie
     public ArrayList<Media> readMovieData(){
 
@@ -46,66 +47,6 @@ public class FileIO{
             System.out.println(e + "Option do not exist.Try again");
         }
         return movies;
-    }
-
-    public int chooseMovie()
-    {
-        Scanner c = new Scanner(System.in);
-        System.out.println("\n\n");
-        System.out.println("Please press the number of the movie you want to watch");
-        int movieIWantToWatch = c.nextInt();
-        media = choseResults(movieIWantToWatch);
-        System.out.println("you have chosen " + media.getName());
-        return movieIWantToWatch;
-    }
-
-    public Media choseResults(int movieIWantToWatch)
-    {
-        ArrayList<Media> wannaWatch = Collection.movies;
-        return wannaWatch.get(movieIWantToWatch);
-    }
-
-    public void youHaveChosenMovie()
-    {
-        System.out.println("\n\n");
-        System.out.println("You have following choices: ");
-        System.out.println("Press 1 if you want to watch the movie ");
-        System.out.println("Press 2 if you want to save the movie to your list");
-        Scanner scan1 = new Scanner(System.in);
-        int input = scan1.nextInt();
-        movieOption(input);
-    }
-
-    public void movieOption(int input)
-    {
-        if (input == 1)
-        {
-            System.out.println("The movie is now playing ");
-        } else if (input == 2)
-        {
-            System.out.println("The movie has been added to your list ");
-            UsersSavedMovies(media.getName());
-            //save movie to csv
-        } else
-        {
-            System.out.println("Option does not exist, please pick the available options");
-        }
-    }
-    public void UsersSavedMovies(String movie)
-    {
-        try{
-            File file = new File("data/UserLogin.csv");
-            if(!file.exists()){
-                file.createNewFile();
-            }
-
-            FileWriter fw = new FileWriter(file, true);
-            fw.write(movie);
-            fw.close();
-
-        }catch(IOException e){
-            System.out.println("not work"+ e.getMessage());
-        }
     }
 }
 

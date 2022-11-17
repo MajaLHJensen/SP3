@@ -5,10 +5,13 @@ public class User extends FileIO {
     public String userName;
     public int userPass;
 
+    public Media movie;
+
     public User(String userName, int userPass){
         this.userName = userName;
         this.userPass = userPass;
     }
+
 
     public String getUserName(){
         return userName;
@@ -33,7 +36,7 @@ public class User extends FileIO {
 
     public static void pickMedia(ArrayList<Media> medias){
 
-        System.out.println("choose type of media: ");
+        System.out.println("Menu: Choose type of media: ");
 
         Scanner scan = new Scanner(System.in);
         System.out.println("1-Movies");
@@ -49,9 +52,9 @@ public class User extends FileIO {
                 String movieS = i+" - "+medias.get(i).getName();
                 System.out.println(movieS);
             }
-            FileIO fileIO = new FileIO();
-            fileIO.chooseMovie();
-            fileIO.youHaveChosenMovie();
+            Options options = new Options();
+            options.chooseMovie();
+            options.youHaveChosenMovie();
         }
 
         else if(input == 2){
@@ -72,11 +75,11 @@ public class User extends FileIO {
         }
 
         else if(input == 4){
-            System.out.println("You choose your watched list: ");
+            System.out.println("You choose your watched list: "); //hvis ikke der er nogle watched
         }
 
         else if(input == 5){
-            System.out.println("You choose your saved list: ");
+            System.out.println("You choose your saved list: "); //hvis ikke der er nogle gemte film
         }
         else{
             System.out.println("Option does not exist, please pick the available options");

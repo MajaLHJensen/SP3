@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+// searchbar for movies only. måske opdøb?
 public class SearchBar{
 
     public ArrayList<Media> Search(){
