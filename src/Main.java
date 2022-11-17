@@ -18,9 +18,6 @@ public class Main{
         text.pickMedia(Collection.movies);
 
         // Here we call the methods for the user to chose what to do with the chosen media
-        Options options = new Options();
-        options.chooseMovie();
-        options.youHaveChosenMovie();
     }
 
     // The method that calls the main() method, is used to restart in method startStreaming()
