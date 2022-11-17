@@ -1,20 +1,20 @@
+import javax.xml.soap.Text;
+
 public class Main{
 
     static int count = 0;
 
     public static void main(String[] args){
 
-        StartMenu startMenu = new StartMenu();
-        startMenu.startStreaming();
+        TextUI textUI = new TextUI();
+        textUI.startStreaming();
 
 
         FileIO fileIO = new FileIO();
         Collection.movies = fileIO.readMovieData();
-        User.pickMedia(Collection.movies);
+        TextUI text = new TextUI();
+        text.pickMedia(Collection.movies);
 
-        Options options = new Options();
-        options.chooseMovie();
-        options.youHaveChosenMovie();
     }
 
 
