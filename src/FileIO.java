@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileIO{
+public class FileIO implements IConnect{
 
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<User> users = new ArrayList<>();
@@ -28,7 +28,7 @@ public class FileIO{
                 // This method takes the String "rating" replaces the comma with a dot and changes it to a Double.
                 String number = lineData[3].trim();
                 number = number.replace(',', '.');
-                double movieRating = Double.parseDouble(number);
+                String movieRating = number;
 
                 Movies movie = new Movies(movieName, movieYear, MovieCategory, movieRating);
                 movies.add(movie);
@@ -111,6 +111,27 @@ public class FileIO{
             e.printStackTrace();
         }
         return true;
+    }
+
+    public void createMovies(IConnect con)
+    {
+        scanner.nextLine();
+
+        System.out.println("If you are watching online, press 1");
+        System.out.println("If you are watching offline, press 2");
+
+        String option = scanner.nextLine();
+        if("1".equals(option))
+        {
+            scanner.nextLine();
+            MediaDB mediaDB = new MediaDB();
+            mediaDB.run();
+        } else if ("2".equals(option))
+        {
+            scanner.nextLine();
+            FileIO fileIO = new FileIO();
+            Collection.movies = fileIO.readMovieData();
+        }
     }
 }
 
