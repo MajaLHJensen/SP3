@@ -1,4 +1,3 @@
-import com.mysql.jdbc.JDBC4Connection;
 
 import java.util.ArrayList;
 
