@@ -1,16 +1,10 @@
-
 import java.util.ArrayList;
-
 public class Main{
-
-
     static int count = 0;
 
     public static void main(String[] args){
-
-
         // Here we call the method to welcome the user and log in.
-        TextUI textUI = new TextUI();
+        //TextUI textUI = new TextUI();
        // textUI.startStreaming();
 
         //ArrayList<String> category = new ArrayList<>();
@@ -19,18 +13,21 @@ public class Main{
        //     sb.append(category.get(i));
        // }
        // String str = sb.toString();
-
-        //MediaDB mediaDB = new MediaDB();
-       // mediaDB.printMovies();
-
+        MediaDB mediaDB = new MediaDB();
+        mediaDB.printMovies();
 
         //Here we call the method to read the movie data so the user can pick the specific media they want.
-        FileIO fileIO = new FileIO();
-        Collection.movies = fileIO.readMovieData();
-        //TextUI text = new TextUI();
-        textUI.pickMedia(Collection.movies);
-    }
+        //FileIO fileIO = new FileIO();
 
+        //fileIO.getAllMovies();
+        //System.out.println(fileIO.getAllMovies());
+
+        //Collection c = new Collection();
+        //textUI.pickMedia(Collection.movies);
+        //Collection.movies = fileIO.getAllMovies();
+        //TextUI text = new TextUI();
+
+    }
     // The method that calls the main() method, is used to restart in method startStreaming()
     static void mainCaller()
     {

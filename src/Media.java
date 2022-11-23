@@ -19,11 +19,9 @@ abstract public class Media{
 
     @Override
     public String toString(){
-        return "Media{" +
-                "category=" + category +
-                ", name='" + name + '\'' +
-                ", year='" + year + '\'' +
-                ", rating=" + rating +
-                '}';
+        return "category: " + category +
+                ", name: " + name + '\'' +
+                ", year: " + year + '\'' +
+                ", rating: " + rating;
     }
 }

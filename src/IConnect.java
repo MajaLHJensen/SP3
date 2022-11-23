@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public interface IConnect
 {
-     void createMovies(IConnect con);
+     ArrayList<Media> getAllMovies();
 
 }

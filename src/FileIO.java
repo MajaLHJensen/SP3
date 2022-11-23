@@ -2,47 +2,21 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileIO {
+public class FileIO implements IConnect{
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<User> users = new ArrayList<>();
     ArrayList<Media> movies = new ArrayList<>();
 
+    File file = new File("data/UserLogin.csv");
+
     // Arraylist of Media and choose Movie
-    public ArrayList<Media> readMovieData(){
-        try{
-            //Imports the CSV file(movieData) and creates a scanner to go through it.
-            Scanner scan = new Scanner(new File("data/movieData.csv"));
-            while (scan.hasNextLine()){
-                String line = scan.nextLine();
-                String[] lineData = line.split(";");
 
-                String movieName = lineData[0].trim();
-                String movieYear = lineData[1].trim();
-                // This method splits the String "categories" by its comma separation and goes through the array.
-                ArrayList<String> MovieCategory = new ArrayList<>();
-                String[] categoryArray = lineData[2].split(", ");
-                for (int i = 0; i < categoryArray.length - 1; i++){
-                    MovieCategory.add(categoryArray[i]);
-                }
-                // This method takes the String "rating" replaces the comma with a dot and changes it to a Double.
-                String number = lineData[3].trim();
-                number = number.replace(',', '.');
-                String movieRating = number;
-
-                Movies movie = new Movies(movieName, movieYear, MovieCategory, movieRating);
-                movies.add(movie);
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println(e + "Option do not exist.Try again");
-        }
-        return movies;
-    }
 
     public void register(String userName, int userPassword){
 
         //Transfer new login to the file(UserLogin.csv) when the user signs up.
         try{
-            File file = new File("data/UserLogin.csv");
+
             if (!file.exists()){
                 file.createNewFile();
             }
@@ -113,39 +87,37 @@ public class FileIO {
         return true;
     }
 
-    public boolean chooseConnection() {
-        {
-            boolean online = true;
-            boolean offline = false;
-            scanner.nextLine();
-            System.out.println("If you are watching online, press 1");
-            System.out.println("If you are watching offline, press 2");
-            String option = scanner.nextLine();
-            if ("1".equals(option)) {
-                scanner.nextLine();
-                MediaDB mediaDB = new MediaDB();
-                mediaDB.run();
-                {
-                    return online;
-                }
+    public ArrayList<Media> getAllMovies()
+    {
+        try{
+            //Imports the CSV file(movieData) and creates a scanner to go through it.
+            Scanner scan = new Scanner(new File("data/movieData.csv"));
 
-            } else if ("2".equals(option)) {
-                scanner.nextLine();
-                FileIO fileIO = new FileIO();
-                Collection.movies = fileIO.readMovieData();
-                {
-                    return offline;
+            while (scan.hasNextLine()){
+                String line = scan.nextLine();
+                String[] lineData = line.split(";");
+
+                String movieName = lineData[0].trim();
+                String movieYear = lineData[1].trim();
+                // This method splits the String "categories" by its comma separation and goes through the array.
+                ArrayList<String> MovieCategory = new ArrayList<>();
+                String[] categoryArray = lineData[2].split(", ");
+                for (int i = 0; i < categoryArray.length - 1; i++){
+                    MovieCategory.add(categoryArray[i]);
                 }
+                // This method takes the String "rating" replaces the comma with a dot and changes it to a Double.
+                String number = lineData[3].trim();
+                number = number.replace(',', '.');
+                String movieRating = number;
+
+                Movies movie = new Movies(movieName, movieYear, MovieCategory, movieRating);
+                movies.add(movie);
+                System.out.println(movie);
             }
+        } catch (FileNotFoundException e) {
+            System.out.println(e + "Option do not exist.Try again");
         }
-        return false;
+        //System.out.println(movie);
+        return movies;
     }
 }
-
-
-
-
-
-
-
-
