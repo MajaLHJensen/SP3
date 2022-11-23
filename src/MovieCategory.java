@@ -21,4 +21,7 @@ public enum MovieCategory {
     MUSIC,
     FILM_NOIR,
     SCI_FI,
+    ;
+
+
 }

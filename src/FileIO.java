@@ -2,8 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileIO implements IConnect{
-
+public class FileIO {
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<User> users = new ArrayList<>();
     ArrayList<Media> movies = new ArrayList<>();
@@ -62,6 +61,7 @@ public class FileIO implements IConnect{
     }
 
     public boolean checkUser(String name, int password){
+
         try{
             File file = new File("data/UserLogin.csv");
             Scanner scanner = new Scanner(file);
@@ -113,25 +113,32 @@ public class FileIO implements IConnect{
         return true;
     }
 
-    public void createMovies(IConnect con)
-    {
-        scanner.nextLine();
-
-        System.out.println("If you are watching online, press 1");
-        System.out.println("If you are watching offline, press 2");
-
-        String option = scanner.nextLine();
-        if("1".equals(option))
+    public boolean chooseConnection() {
         {
+            boolean online = true;
+            boolean offline = false;
             scanner.nextLine();
-            MediaDB mediaDB = new MediaDB();
-            mediaDB.run();
-        } else if ("2".equals(option))
-        {
-            scanner.nextLine();
-            FileIO fileIO = new FileIO();
-            Collection.movies = fileIO.readMovieData();
+            System.out.println("If you are watching online, press 1");
+            System.out.println("If you are watching offline, press 2");
+            String option = scanner.nextLine();
+            if ("1".equals(option)) {
+                scanner.nextLine();
+                MediaDB mediaDB = new MediaDB();
+                mediaDB.run();
+                {
+                    return online;
+                }
+
+            } else if ("2".equals(option)) {
+                scanner.nextLine();
+                FileIO fileIO = new FileIO();
+                Collection.movies = fileIO.readMovieData();
+                {
+                    return offline;
+                }
+            }
         }
+        return false;
     }
 }
 

@@ -33,7 +33,6 @@ public class MediaDB implements IConnect
 
                 this.movieM.add(movies);
 
-                //System.out.println(movieID + " : "+ movieName + " : " + movieYear + " : " + movieCategory + " : " + movieRating);
             }
         } catch (SQLException e)
         {
@@ -60,7 +59,7 @@ public class MediaDB implements IConnect
     {
         for (Movies m : this.movieM)
         {
-            System.out.println(m.movieID + " : " + m.name + " : " + m.year + " : " + m.str + " : " + m.rating);
+            System.out.println(m.movieID + " : " + m.name + " : " + m.year + " : " + m.categoryDB + " : " + m.rating);
         }
     }
 

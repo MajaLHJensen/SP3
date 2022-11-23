@@ -1,4 +1,8 @@
+import com.sun.istack.internal.NotNull;
+import com.sun.istack.internal.Nullable;
+
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class TextUI {
@@ -96,7 +100,7 @@ public class TextUI {
 
         if(input == 1){
             System.out.println("You choose movies, here's some options");
-            for(int i = 0; i < medias.size(); i++){
+            for(int i = 1; i < medias.size(); i++){
                 String movieS = i+" - "+medias.get(i).getName();
                 System.out.println(movieS);
             }
