@@ -1,18 +1,21 @@
+import com.sun.deploy.util.StringUtils;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Movies extends Media {
     String movieID;
     String name;
     String year;
-    String str;
+    String categoryDB;
     String rating;
 
-    public Movies(String movieID, String name, String year, String str, String rating) {
-        super (name, year, str, rating);
+    public Movies(String movieID, String name, String year, String categoryDB, String rating) {
+        super (name, year, categoryDB, rating);
         this.movieID = movieID;
         this.name = name;
         this.year = year;
-        this.str = str;
+        this.categoryDB = categoryDB;
         this.rating = rating;
 
     }
@@ -20,6 +23,7 @@ public class Movies extends Media {
     public Movies(String name, String year, ArrayList<String> category, String rating) {
         super(name, year, String.valueOf(category), rating);
     }
+
 
 
     @Override

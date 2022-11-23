@@ -1,6 +1,5 @@
 public interface IConnect
 {
-     public abstract void createMovies(IConnect con);
-
+     void createMovies(IConnect con);
 
 }
