@@ -1,7 +1,4 @@
-
-
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Movies extends Media {
     String movieID;
@@ -17,14 +14,11 @@ public class Movies extends Media {
         this.year = year;
         this.categoryDB = categoryDB;
         this.rating = rating;
-
     }
 
     public Movies(String name, String year, ArrayList<String> category, String rating) {
         super(name, year, String.valueOf(category), rating);
     }
-
-
 
     @Override
     public String toString() {
