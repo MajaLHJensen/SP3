@@ -1,29 +1,30 @@
 import java.sql.*;
 import java.util.ArrayList;
+// import java.sql.Connection;
 
-public class MediaDB implements IConnect
-{
+public class MediaDB{
     private Connection connection;
-
     String url = "jdbc:mysql://localhost:3306/?user=root" + "autoReconnect=true&useSSL=false";
     String username = "root";
     String password = "1692";
+
+   // static ArrayList<Media> movieM = new ArrayList<>();
     ArrayList<Movies> movieM = new ArrayList<>();
 
-    public void run()
-    {
+
+    //public ArrayList<Media> getAllMovies()
+    public void run(){
         establishConnection();
+
 
         //Statement
         String query = "SELECT * FROM movie.mytable;";
-        try
-        {
+        try {
             Statement statement = this.connection.createStatement();
             statement.execute(query);
 
             ResultSet resultSet = statement.getResultSet();
-            while (resultSet.next())
-            {
+            while (resultSet.next()){
                 String movieID = resultSet.getString("MovieID");
                 String movieName = resultSet.getString("MovieName");
                 String movieYear = resultSet.getString("MovieYear");
@@ -31,27 +32,32 @@ public class MediaDB implements IConnect
                 String movieRating = resultSet.getString("MovieRating");
                 Movies movies = new Movies(movieID, movieName, movieYear, movieCategory, movieRating);
 
-                this.movieM.add(movies);
 
+                this.movieM.add(movies);
+                /*
+                movieM.add(movies);
+                System.out.println(movies);
+                 */
             }
-        } catch (SQLException e)
-        {
+        } catch (SQLException e){
             e.printStackTrace();
         }
     }
 
-    private void establishConnection()
-    {
+    private void establishConnection() {
         //Connection
-        try
-        {
+        try {
             connection = DriverManager.getConnection(url, username, password);
+
+           // connection.close();
+
             //assertEquals(true, connection.isValid(1));
-            //connection.close();
             //assertEquals(false, connection.isValid(1));
-        } catch (SQLException e)
-        {
+
+            //catch (NullPointerException | SQLException e){
+        } catch (SQLException e){
             e.printStackTrace();
+
         }
     }
 
@@ -59,12 +65,10 @@ public class MediaDB implements IConnect
     {
         for (Movies m : this.movieM)
         {
-            System.out.println(m.movieID + " : " + m.name + " : " + m.year + " : " + m.categoryDB + " : " + m.rating);
+            System.out.println(m.movieID + ":" + m.name);
         }
+
     }
 
-    public void createMovies(IConnect con)
-    {
-    }
+
 }
-
