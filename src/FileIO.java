@@ -6,17 +6,11 @@ public class FileIO implements IConnect{
     protected final Scanner scanner = new Scanner(System.in);
     ArrayList<User> users = new ArrayList<>();
     ArrayList<Media> movies = new ArrayList<>();
-
     File file = new File("data/UserLogin.csv");
 
-    // Arraylist of Media and choose Movie
-
-
     public void register(String userName, int userPassword){
-
         //Transfer new login to the file(UserLogin.csv) when the user signs up.
         try{
-
             if (!file.exists()){
                 file.createNewFile();
             }
@@ -28,14 +22,12 @@ public class FileIO implements IConnect{
             bw.close();
             User newUser = new User(userName, userPassword);
             users.add(newUser);
-
         } catch (Exception e){
             System.out.println(e);
         }
     }
 
     public boolean checkUser(String name, int password){
-
         try{
             File file = new File("data/UserLogin.csv");
             Scanner scanner = new Scanner(file);
@@ -52,7 +44,6 @@ public class FileIO implements IConnect{
                 System.out.println(name);
                 System.out.println("Username does exist");
             }
-
         }catch (FileNotFoundException e){
             System.out.println("UserLogin.csv does not exist");
             System.out.println("No users found, please register:");
@@ -79,7 +70,6 @@ public class FileIO implements IConnect{
                 if (userName.equals(userNameFromFile))
                     return false;
             }
-
         }catch (FileNotFoundException e){
             System.out.println("UserLogin.csv does not exist");
             e.printStackTrace();
@@ -92,7 +82,6 @@ public class FileIO implements IConnect{
         try{
             //Imports the CSV file(movieData) and creates a scanner to go through it.
             Scanner scan = new Scanner(new File("data/movieData.csv"));
-
             while (scan.hasNextLine()){
                 String line = scan.nextLine();
                 String[] lineData = line.split(";");
