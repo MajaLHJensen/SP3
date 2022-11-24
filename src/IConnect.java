@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-public interface IConnect
-{
+public interface IConnect{
      ArrayList<Media> getAllMovies();
 }

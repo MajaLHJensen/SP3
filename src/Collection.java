@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
 public class Collection {
-    // Creates an Array of Media and specifically movies.
+    //Arraylist for the csv file.
     public static ArrayList<Media> movies;
 }
