@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 abstract public class Media{
     private  final String category;
     private final String name;
@@ -19,7 +17,8 @@ abstract public class Media{
 
     @Override
     public String toString(){
-        return "category: " + category +
+        return "Movie: " +
+                "category:" + category +
                 ", name: " + name + '\'' +
                 ", year: " + year + '\'' +
                 ", rating: " + rating;

@@ -15,12 +15,13 @@ public class Main{
        // String str = sb.toString();
         MediaDB mediaDB = new MediaDB();
         mediaDB.printMovies();
+        mediaDB.getAllMovies();
 
         //Here we call the method to read the movie data so the user can pick the specific media they want.
-        //FileIO fileIO = new FileIO();
+        FileIO fileIO = new FileIO();
 
-        //fileIO.getAllMovies();
-        //System.out.println(fileIO.getAllMovies());
+        fileIO.getAllMovies();
+        System.out.println(fileIO.getAllMovies());
 
         //Collection c = new Collection();
         //textUI.pickMedia(Collection.movies);

@@ -84,10 +84,8 @@ public class TextUI {
     }
 
     public void pickMedia(ArrayList<Media> medias){
-
         TextUI textUI = new TextUI();
         System.out.println("Menu: Choose type of media: ");
-
         Scanner scan = new Scanner(System.in);
         System.out.println("1-Movies");
         System.out.println("2-Series");
