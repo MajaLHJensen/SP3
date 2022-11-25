@@ -61,7 +61,6 @@ public class FileIO implements IConnect{
         try{
             File file = new File("data/UserLogin.csv");
             Scanner scanner = new Scanner(file);
-
             while (scanner.hasNextLine()){
                 String line = scanner.nextLine();
                 String[] user = line.split(", ");
@@ -77,15 +76,13 @@ public class FileIO implements IConnect{
         return true;
     }
 
-    public ArrayList<Media> getAllMovies()
-    {
+    public ArrayList<Media> getAllMovies(){
         try{
             //Imports the CSV file(movieData) and creates a scanner to go through it.
             Scanner scan = new Scanner(new File("data/movieData.csv"));
             while (scan.hasNextLine()){
                 String line = scan.nextLine();
                 String[] lineData = line.split(";");
-
                 String movieName = lineData[0].trim();
                 String movieYear = lineData[1].trim();
                 // This method splits the String "categories" by its comma separation and goes through the array.
@@ -98,15 +95,21 @@ public class FileIO implements IConnect{
                 String number = lineData[3].trim();
                 number = number.replace(',', '.');
                 String movieRating = number;
-
                 Movies movie = new Movies(movieName, movieYear, MovieCategory, movieRating);
                 movies.add(movie);
-                System.out.println(movie);
             }
         } catch (FileNotFoundException e) {
             System.out.println(e + "Option do not exist.Try again");
         }
-        //System.out.println(movie);
         return movies;
+    }
+
+    public void printAllMovies(ArrayList<Media> movies)
+    {
+        for(int i = 0; i < movies.size(); i++)
+        {
+            System.out.println(movies.get(i));
+
+        }
     }
 }
