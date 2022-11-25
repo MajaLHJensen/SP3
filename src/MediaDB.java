@@ -6,8 +6,9 @@ public class MediaDB{
     private Connection connection;
     String url = "jdbc:mysql://localhost:3306/?user=root" + "autoReconnect=true&useSSL=false";
 
+
     String username = "root";
-    String password = "1692";
+    String password = "Krusell123";
 
    // static ArrayList<Media> movieM = new ArrayList<>();
     ArrayList<Movies> movieM = new ArrayList<>();

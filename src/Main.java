@@ -4,8 +4,8 @@ public class Main{
 
     public static void main(String[] args){
         // Here we call the method to welcome the user and log in.
-        //TextUI textUI = new TextUI();
-       // textUI.startStreaming();
+        TextUI textUI = new TextUI();
+        textUI.startStreaming();
 
         //ArrayList<String> category = new ArrayList<>();
        // StringBuffer sb = new StringBuffer();
@@ -13,6 +13,7 @@ public class Main{
        //     sb.append(category.get(i));
        // }
        // String str = sb.toString();
+
         MediaDB mediaDB = new MediaDB();
         mediaDB.printMovies();
         mediaDB.getAllMovies();
